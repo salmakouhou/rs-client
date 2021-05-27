@@ -27,7 +27,7 @@ import DirectorLabsStatistics from "../views/Statistics/DirectorLabStatistics";
 import Archive from '../views/Statistics/Archive'
 import Galerie from '../views/ManagingEntities/Galerie'
 import GenralAssembly from '../views/Statistics/GenralAssembly'
-import MotDirecteur from "../views/ManagingEntities/MotDirecteur"; /////////////
+import Mots from "../views/ManagingEntities/Mots"; /////////////
 
 import {
   HomeIcon,
@@ -67,8 +67,8 @@ const entitiesPathsCategory = {
   routes: [
     {
       title: "Mot du Directeur",
-      path: "/MotDirecteur",
-      component: MotDirecteur,
+      path: "/mots",
+      component: Mots,
       roles: ["LABORATORY_HEAD"],
       inMenu: true,
     },
