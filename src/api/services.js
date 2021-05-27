@@ -133,18 +133,11 @@ const makeTeamService = (api) => ({
 
 
 const makeMotService = (api) => ({
-  createTeam: (mot) => api.post(`/mots`, mot),
-  //createTeam:(mot)=> console.log(mot),
+  createMot: (mot) => api.post(`/mots`, mot),
   updateMot: (mot) => api.put(`/mots`, mot),
-  findAllMots: () => api.get(`/mots`),
   findMot: (_id) => api.get(`/mots/${_id}`),
-  deleteMot: (_id) => api.delete(`/mots/${_id}`),
-  addUserToMot: (mot_id, user_id) =>
-    api.get(`/add-to-mot/${mot_id}/${user_id}`),
-  removeFromMot: (mot_id, user_id) =>
-    api.get(`/remove-from-team/${mot_id}/${user_id}`),
-  associateHeadToMot: (mot_id, head_id) =>
-    api.get(`/team-head-association/${mot_id}/${head_id}`),
+  findAllMots: () => api.get(`/mots`),
+  deleteMot: (_id) => api.delete(`/mots/${_id}`)
 });
 
 
