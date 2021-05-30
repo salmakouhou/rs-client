@@ -16,13 +16,10 @@ const Galerie = () => {
     let [loading, setLoading] = useState(false);
     let [color, setColor] = useState("#1e90ff");
 
-
     const [inputs, setInputs] = useState({});
     const [action, setAction] = useState("ADDING");
 
-
-
-    const columns = ["Date de la photo ", "Joindre la photo"];
+    const columns = ["Date de la photo", "Joindre la photo"];
     const inputsSkeleton = [
         { name: "date", label: columns[0], type: "date" },
         { name: "file", label: columns[1], type: "file" },
@@ -81,7 +78,7 @@ const Galerie = () => {
                         formData.append('laboratory_id', laboratoryId);
                         const response = await galerieUploadService.createGalerie(formData);
                         setLoading(false)
-                        swal("Le procès verbale à été ajouter avec succès", {
+                        swal("La photo à été ajouter avec succès", {
                             icon: "success",
                         });
                         if (response.data) {
@@ -108,7 +105,7 @@ const Galerie = () => {
         try {
             swal({
                 title: "Confirmation",
-                text: "Etes vous sur de vouloir supprimer cet procès verbale?",
+                text: "Etes vous sur de vouloir supprimer cet photo?",
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
@@ -131,7 +128,7 @@ const Galerie = () => {
 
 
 
-    const downloadRapport = async (galerie) => {
+    const downloadPhoto = async (galerie) => {
         try {
             setLoading(true)
             const response = await galerieUploadService.findGalerie(galerie.split("/")[0], galerie.split("/")[1]);
@@ -255,7 +252,7 @@ const Galerie = () => {
 
             <div className="page-header">
                 <PageHeader
-                    title={`Gestion de la Galerie `}
+                    title={`Archivage des photos `}
                     subTitle={`${galeries.length} photos`}
                 />
             </div>
@@ -275,12 +272,12 @@ const Galerie = () => {
                 <div className="col-md-6">
                     <div className="card">
                         <div className="card-header">
-                            <h3 className="card-title">Les photos</h3>
+                            <h3 className="card-title">Les Photos</h3>
                         </div>
                         <div className={`card-body form `}>
                             <GalerieTree data={galeries}
                                 removeElement={removeElement}
-                                downloadRapport={downloadRapport}
+                                downloadPhoto={downloadPhoto}
                                 deleteGalerie={deleteGalerie}
                                 pushFile={pushFile}
                             />
