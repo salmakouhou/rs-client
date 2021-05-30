@@ -35,13 +35,10 @@ const GalerieFORM = ({ inputs, setInputs, handleSubmit, inputsSkeleton, cancelEd
             {inputsSkeleton.map((input, index) => (
               <li className={twoColumns || ""} key={index}>
                 <Fragment>
-                  
-                  {input.type === "file" && input.label === "Joidre la photo" && (
-
-                    <div className="form-group mt-2 ">
+                  {input.type === "date" && (
+                    <div className="form-group mt-2">
                       <label className="form-label">{input.label}</label>
-                      <input type="file" className="" accept=".jpg, .jpeg, .png"
-                        onChange={handleInputsChange} multiple name={input.name} required />
+                      <input required type="date" className="form-control" onChange={handleInputsChange} value={inputs[input.name] || ""} name={input.name} required />
                     </div>
                   )}
 
@@ -49,7 +46,7 @@ const GalerieFORM = ({ inputs, setInputs, handleSubmit, inputsSkeleton, cancelEd
 
                     <div className="form-group mt-2 ">
                       <label className="form-label">{input.label}</label>
-                      <input type="file" className="" accept=".jpg, .jpeg, .png"
+                      <input type="file" className="" accept=".jpg, .jpeg"
                         onChange={handleInputsChange}  name={input.name} required />
                     </div>
                   )}
