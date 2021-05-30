@@ -8,6 +8,7 @@ const GalerieFORM = ({ inputs, setInputs, handleSubmit, inputsSkeleton, cancelEd
     if (event.target.name == "file") {
       var keys = Object.keys(event.target.files);
       var files = event.target.files
+      
       keys.forEach((key) => {
         setInputs((inputs) => ({
           ...inputs,
@@ -46,8 +47,8 @@ const GalerieFORM = ({ inputs, setInputs, handleSubmit, inputsSkeleton, cancelEd
 
                     <div className="form-group mt-2 ">
                       <label className="form-label">{input.label}</label>
-                      <input type="file" className="" accept=".jpg, .jpeg"
-                        onChange={handleInputsChange}  name={input.name} required />
+                      <input type="file" 
+                        onChange={handleInputsChange} multiple accept=".jpg" name={input.name} required />
                     </div>
                   )}
                 </Fragment>

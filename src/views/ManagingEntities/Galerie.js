@@ -71,6 +71,7 @@ const Galerie = () => {
                         const laboratoryId = JSON.parse(localStorage.getItem("user")).laboratoriesHeaded[0]._id;
                         const formData = new FormData();
                         var keys = Object.keys(inputs);
+                         
                         keys.forEach((key) => {
                             formData.append(key, inputs[key])
                         })
